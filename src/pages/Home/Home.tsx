@@ -21,7 +21,7 @@ const Home = (props: Props) => {
                 <h2 className='mt-2 text-lg font-semibold'>And be the first!</h2>
             </div>
 
-            <div className='pt-6 px-8 w-full min-h-full bg-gray-100'>
+            <div className='pt-6 px-8 w-full min-h-screen bg-gray-100'>
                 <h2 className='font-semibold text-xl'>Your Quiz</h2>
                 {renderQuiz(quiz)}
             </div>

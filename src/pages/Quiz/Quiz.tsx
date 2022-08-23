@@ -5,6 +5,8 @@ import { incrementScore, setCurrentQuestionsNumber } from '../../app/slices/user
 import AnswerItem from '../../ui/AnswerItem'
 import Button from '../../ui/Button'
 
+import { v4 } from 'uuid'
+
 
 type Props = {}
 
@@ -28,7 +30,7 @@ const Quiz = (props: Props) => {
 
     useEffect(() => {
         dispatch(setCurrentQuestionsNumber(currentQuiz.questionsNumber))
-        
+
         // eslint-disable-next-line
     }, [])
 
@@ -55,7 +57,8 @@ const Quiz = (props: Props) => {
                 id={answer.answer} 
                 name={currentAppQuestion.question} 
                 right={answer.right} 
-                onChangeHandler={onChangeHandler}/>
+                onChangeHandler={onChangeHandler}
+                key={v4()}/>
         })
     } 
 
