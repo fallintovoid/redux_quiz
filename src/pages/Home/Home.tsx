@@ -1,5 +1,6 @@
 import React from 'react'
 import { useAppSelector } from '../../hooks/reduxHook'
+import { Link } from 'react-router-dom'
 import QuizItem from '../../ui/QuizItem'
 
 type Props = {}
@@ -10,7 +11,11 @@ const Home = (props: Props) => {
 
     const renderQuiz = (quizes: any[]) => {
         return quizes.map((item: any) => {
-            return <QuizItem id={item.id} name={item.name} questionsNumber={item.questionsNumber}/>
+            return (
+                <Link to={`quiz/${item.id}`}>
+                    <QuizItem id={item.id} name={item.name} questionsNumber={item.questionsNumber}/>
+                </Link>
+            )
         })
     }
 
@@ -25,7 +30,6 @@ const Home = (props: Props) => {
                 <h2 className='font-semibold text-xl'>Your Quiz</h2>
                 {renderQuiz(quiz)}
             </div>
-
         </div>
     )
 }

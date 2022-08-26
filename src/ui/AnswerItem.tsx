@@ -18,7 +18,7 @@ const AnswerItem = ({id, name, right, onChangeHandler}: Props) => {
 
   return (
     <div className='w-full px-8 py-4 bg-purple-100 mt-4 rounded-md drop-shadow-lg' >
-        <input type='radio' id={id+''} name={name} className='text-xl accent-pink-500' onChange={(e) => onChangeHandler(e, right)} ref={ref}/>
+        <input type='radio' id={id+''} name={name} className='text-xl' onChange={(e) => onChangeHandler(e, right)} ref={ref}/>
         <label htmlFor={id+''} className='ml-4 font-semibold text-lg'>{id}</label>
     </div>
   )

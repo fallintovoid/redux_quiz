@@ -5,9 +5,6 @@ import { incrementScore, setCurrentQuestionsNumber } from '../../app/slices/user
 import AnswerItem from '../../ui/AnswerItem'
 import Button from '../../ui/Button'
 
-import { v4 } from 'uuid'
-
-
 type Props = {}
 
 const Quiz = (props: Props) => {
@@ -52,13 +49,13 @@ const Quiz = (props: Props) => {
 
     
     const renderAnswerItems = (answers: any[]) => {
-        return answers.map(answer => {
+        return answers.map((answer, i) => {
             return <AnswerItem 
                 id={answer.answer} 
                 name={currentAppQuestion.question} 
                 right={answer.right} 
                 onChangeHandler={onChangeHandler}
-                key={v4()}/>
+                key={i}/>
         })
     } 
 
